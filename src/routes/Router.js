@@ -1,5 +1,6 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
+import RequireAuth from "../views/ui/RequireAuth.js";
 
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
@@ -27,7 +28,15 @@ const ThemeRoutes = [
     element: <FullLayout />,
     children: [
       { path: "/", element: <Navigate to="/starter" /> },
-      { path: "/starter", exact: true, element: <Starter /> },
+      {
+        path: "/starter",
+        exact: true,
+        element: (
+          <RequireAuth>
+            <Starter />
+          </RequireAuth>
+        ),
+      },
       { path: "/about", exact: true, element: <About /> },
       { path: "/alerts", exact: true, element: <Alerts /> },
       { path: "/badges", exact: true, element: <Badges /> },
@@ -35,7 +44,11 @@ const ThemeRoutes = [
       { path: "/cards", exact: true, element: <Cards /> },
       { path: "/grid", exact: true, element: <Grid /> },
       { path: "/table", exact: true, element: <Tables /> },
-      { path: "/login", exact: true, element: <Login></Login> },
+      {
+        path: "/login",
+        exact: true,
+        element: <Login></Login>,
+      },
       { path: "/signup", exact: true, element: <SignUp></SignUp> },
       { path: "/forms", exact: true, element: <Forms /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },

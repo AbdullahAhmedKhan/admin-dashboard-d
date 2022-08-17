@@ -1,5 +1,7 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Navbar,
   Collapse,
@@ -15,10 +17,19 @@ import {
 } from "reactstrap";
 import { ReactComponent as LogoWhite } from "../assets/images/logos/xtremelogowhite.svg";
 import user1 from "../assets/images/users/user1.jpg";
+import auth from "../firebase.init";
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  const logout = () => {
+    signOut(auth);
+  };
+  const login = () => {
+    navigate("/login");
+  };
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const Handletoggle = () => {
@@ -80,6 +91,7 @@ const Header = () => {
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
+
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="primary">
             <img
@@ -89,15 +101,20 @@ const Header = () => {
               width="30"
             ></img>
           </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>My Balance</DropdownItem>
-            <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
-          </DropdownMenu>
+          {user ? (
+            <DropdownMenu>
+              <DropdownItem header>Info</DropdownItem>
+              <DropdownItem>My Account</DropdownItem>
+              <DropdownItem>Edit Profile</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>My Balance</DropdownItem>
+              <DropdownItem onClick={logout}>Logout</DropdownItem>
+            </DropdownMenu>
+          ) : (
+            <DropdownMenu>
+              <DropdownItem onClick={login}>Login</DropdownItem>
+            </DropdownMenu>
+          )}
         </Dropdown>
       </Collapse>
     </Navbar>

@@ -10,12 +10,12 @@ const About = () => {
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
             <i className="bi bi-bell me-2"> </i>
-            About Xtreme React
+            About Admin Dashboard
           </CardTitle>
           <CardBody className="p-4">
             <Row justify-content>
               <Col lg="8">
-                <h2 className="mt-4">Xtreme React Admin Pro Version</h2>
+                <h2 className="mt-4">React Admin Dashboard</h2>
                 <h5 className=" mb-4">
                   5 premium and highly customizable demo variations included in
                   the package, with React Router 6, Redux Toolkit, Axios nd much
@@ -24,6 +24,7 @@ const About = () => {
                 <img
                   src="https://www.wrappixel.com/wp-content/uploads/edd/2020/04/xtreme-react-admin-template-y.jpg"
                   alt="my"
+                  className="img-fluid"
                 />
                 <Button
                   className="mt-3"
@@ -31,7 +32,13 @@ const About = () => {
                   href="https://www.wrappixel.com/templates/xtreme-react-redux-admin/?ref=33"
                   target="_blank"
                 >
-                  Check Pro Version
+                  <a
+                    className="text-white text-decoration-none"
+                    target="_blank"
+                    href="https://github.com/AbdullahAhmedKhan/admin-dashboard-d"
+                  >
+                    Check out on Github
+                  </a>
                 </Button>
               </Col>
             </Row>

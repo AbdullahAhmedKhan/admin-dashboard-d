@@ -5,11 +5,11 @@ const SalesChart = () => {
   const chartoptions = {
     series: [
       {
-        name: "Iphone 13",
+        name: "Domain",
         data: [0, 31, 40, 28, 51, 42, 109, 100],
       },
       {
-        name: "Oneplue 9",
+        name: "Hosting",
         data: [0, 11, 32, 45, 32, 34, 52, 41],
       },
     ],

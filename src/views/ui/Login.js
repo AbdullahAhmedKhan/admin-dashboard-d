@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../layouts/loader/Loader";
 import "./Login.css";
+import logo from "../../assets/images/logos/logo.png";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -162,12 +163,9 @@ const Login = () => {
 
     <div class="login-wrapper">
       <div class="logo">
-        <img
-          src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png"
-          alt=""
-        />
+        <img src={logo} alt="" />
       </div>
-      <div class="text-center mt-4 name">Twitter</div>
+      <div class="text-center mt-4 name">Nextech Limited</div>
       <form class="p-3 mt-3" onSubmit={handleSubmit(onSubmit)}>
         <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
@@ -189,19 +187,19 @@ const Login = () => {
               },
             })}
           />
-          <label className="label">
-            {errors.email?.type === "required" && (
-              <span className="label-text-alt text-red-600">
-                {errors.email.message}
-              </span>
-            )}
-            {errors.email?.type === "pattern" && (
-              <span className="label-text-alt text-red-600">
-                {errors.email.message}
-              </span>
-            )}
-          </label>
         </div>
+        <label className="label">
+          {errors.email?.type === "required" && (
+            <span className="label-text-alt text-red-600">
+              {errors.email.message}
+            </span>
+          )}
+          {errors.email?.type === "pattern" && (
+            <span className="label-text-alt text-red-600">
+              {errors.email.message}
+            </span>
+          )}
+        </label>
         <div class="form-field d-flex align-items-center">
           <span class="fas fa-key"></span>
           <input
@@ -239,7 +237,10 @@ const Login = () => {
         </button>
       </form>
       <div class="text-center fs-6">
-        <a href="#">Forget password?</a> or <a as Link href="#/signup">Sign up</a>
+        <a href="#">Forget password?</a> or{" "}
+        <a as Link href="#/signup">
+          Sign up
+        </a>
       </div>
     </div>
   );

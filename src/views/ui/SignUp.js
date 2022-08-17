@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import logo from "../../assets/images/logos/logo.png";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -48,12 +49,9 @@ const SignUp = () => {
   return (
     <div class="login-wrapper">
       <div class="logo">
-        <img
-          src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png"
-          alt=""
-        />
+        <img src={logo} alt="" />
       </div>
-      <div class="text-center mt-4 name">Twitter</div>
+      <div class="text-center mt-4 name">Nextech Limited</div>
       <form class="p-3 mt-3" onSubmit={handleSubmit(onSubmit)}>
         <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
@@ -125,7 +123,10 @@ const SignUp = () => {
         </button>
       </form>
       <div class="text-center fs-6">
-        <a href="#">Already have an account?</a> or <a as Link href="#/login">Login</a>
+        <a href="#">Already have an account?</a> or{" "}
+        <a as Link href="#/login">
+          Login
+        </a>
       </div>
     </div>
   );
