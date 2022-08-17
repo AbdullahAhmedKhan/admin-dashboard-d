@@ -34,6 +34,11 @@ const navigation = [
     icon: "bi bi-columns",
   },
   {
+    title: "Services",
+    href: "/services",
+    icon: "bi bi-columns",
+  },
+  {
     title: "Table",
     href: "/table",
     icon: "bi bi-layout-split",

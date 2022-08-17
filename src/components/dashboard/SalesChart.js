@@ -6,11 +6,11 @@ const SalesChart = () => {
     series: [
       {
         name: "Domain",
-        data: [0, 31, 40, 28, 51, 42, 109, 100],
+        data: [0, 31, 40, 28, 51, 42, 109, 100, 82, 102, 104, 110],
       },
       {
         name: "Hosting",
-        data: [0, 11, 32, 45, 32, 34, 52, 41],
+        data: [0, 11, 32, 45, 32, 34, 52, 41, 30, 34, 40, 65],
       },
     ],
     options: {
@@ -32,12 +32,16 @@ const SalesChart = () => {
         categories: [
           "Jan",
           "Feb",
-          "March",
-          "April",
+          "Mar",
+          "Apr",
           "May",
-          "June",
-          "July",
+          "Jun",
+          "Jul",
           "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
         ],
       },
     },
