@@ -15,6 +15,7 @@ const Buttons = lazy(() => import("../views/ui/Buttons"));
 const Cards = lazy(() => import("../views/ui/Cards"));
 const Grid = lazy(() => import("../views/ui/Grid"));
 const Services = lazy(() => import("../views/ui/Services"));
+const Users = lazy(() => import("../views/ui/Users"));
 const Tables = lazy(() => import("../views/ui/Tables"));
 const Login = lazy(() => import("../views/ui/Login"));
 const SignUp = lazy(() => import("../views/ui/SignUp"));
@@ -45,6 +46,7 @@ const ThemeRoutes = [
       { path: "/cards", exact: true, element: <Cards /> },
       { path: "/grid", exact: true, element: <Grid /> },
       { path: "/services", exact: true, element: <Services></Services> },
+      { path: "/users", exact: true, element: <Users></Users> },
       { path: "/table", exact: true, element: <Tables /> },
       {
         path: "/login",
