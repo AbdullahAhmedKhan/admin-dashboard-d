@@ -104,9 +104,9 @@ const Sidebar = () => {
             tag="a"
             target="_blank"
             className="mt-3"
-            href="https://www.wrappixel.com/templates/xtreme-react-redux-admin/?ref=33"
+            href="https://www.nixtecsys.com/"
           >
-            Upgrade To Pro
+            Go to main website
           </Button>
         </Nav>
       </div>
