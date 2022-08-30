@@ -39,6 +39,11 @@ const navigation = [
     icon: "bi bi-columns",
   },
   {
+    title: "Services Request",
+    href: "/servicerequest",
+    icon: "bi bi-columns",
+  },
+  {
     title: "Users",
     href: "/users",
     icon: "bi bi-columns",

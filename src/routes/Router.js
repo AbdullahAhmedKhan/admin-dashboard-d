@@ -15,6 +15,7 @@ const Buttons = lazy(() => import("../views/ui/Buttons"));
 const Cards = lazy(() => import("../views/ui/Cards"));
 const Grid = lazy(() => import("../views/ui/Grid"));
 const Services = lazy(() => import("../views/ui/Services"));
+const ServiceRequest = lazy(() => import("../views/ui/ServiceRequest"));
 const Users = lazy(() => import("../views/ui/Users"));
 const Tables = lazy(() => import("../views/ui/Tables"));
 const Login = lazy(() => import("../views/ui/Login"));
@@ -46,6 +47,11 @@ const ThemeRoutes = [
       { path: "/cards", exact: true, element: <Cards /> },
       { path: "/grid", exact: true, element: <Grid /> },
       { path: "/services", exact: true, element: <Services></Services> },
+      {
+        path: "/servicerequest",
+        exact: true,
+        element: <ServiceRequest></ServiceRequest>,
+      },
       { path: "/users", exact: true, element: <Users></Users> },
       { path: "/table", exact: true, element: <Tables /> },
       {
@@ -59,5 +65,4 @@ const ThemeRoutes = [
     ],
   },
 ];
-
 export default ThemeRoutes;

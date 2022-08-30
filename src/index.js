@@ -5,12 +5,23 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 import Loader from "./layouts/loader/Loader";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <Suspense fallback={<Loader />}>
+    <QueryClientProvider client={queryClient}>
     <HashRouter>
       <App />
     </HashRouter>
+    </QueryClientProvider>
   </Suspense>,
 
   document.getElementById("root")
