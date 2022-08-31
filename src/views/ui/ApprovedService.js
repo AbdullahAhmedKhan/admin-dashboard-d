@@ -7,9 +7,8 @@ import {
   CardTitle,
   Table,
 } from "reactstrap";
-
-const ServiceRequest = () => {
-  const status = "pending";
+const ApprovedService = () => {
+  const status = "done";
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/servicerequest?status=${status}`)
@@ -21,10 +20,10 @@ const ServiceRequest = () => {
     <div>
       <Card>
         <CardBody>
-        <div className="text-center">
-            <CardTitle tag="h2" className="text-success">Requested Services</CardTitle>
+          <div className="text-center">
+            <CardTitle tag="h2" className="text-success">Approved Services</CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h5">
-              All pending services
+              All approved services
             </CardSubtitle>
           </div>
           <hr />
@@ -39,7 +38,6 @@ const ServiceRequest = () => {
                 <th>Purchase Date</th>
                 <th>Paid</th>
                 <th>Status</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -67,19 +65,6 @@ const ServiceRequest = () => {
                       <span className="p-2 bg-success rounded-circle d-inline-block ms-3"></span>
                     )}
                   </td>
-
-                  <td>
-                    <Button
-                      color="success"
-                      size="sm"
-                      className="mx-2 rounded-pill"
-                    >
-                      Accept
-                    </Button>
-                    <Button color="danger" size="sm" className="rounded-pill">
-                      Cancel
-                    </Button>
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -89,5 +74,4 @@ const ServiceRequest = () => {
     </div>
   );
 };
-
-export default ServiceRequest;
+export default ApprovedService;

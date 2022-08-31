@@ -36,17 +36,22 @@ const navigation = [
   {
     title: "Services",
     href: "/services",
-    icon: "bi bi-columns",
+    icon: "bi bi-shield-plus",
   },
   {
     title: "Services Request",
     href: "/servicerequest",
-    icon: "bi bi-columns",
+    icon: "bi bi-bookmark-x",
+  },
+  {
+    title: "Approved Services",
+    href: "/approved",
+    icon: "bi bi-check-circle",
   },
   {
     title: "Users",
     href: "/users",
-    icon: "bi bi-columns",
+    icon: "bi bi-people",
   },
   {
     title: "Table",
@@ -66,7 +71,7 @@ const navigation = [
   {
     title: "About",
     href: "/about",
-    icon: "bi bi-people",
+    icon: "bi bi-info-circle",
   },
 ];
 

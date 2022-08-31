@@ -16,6 +16,7 @@ const Cards = lazy(() => import("../views/ui/Cards"));
 const Grid = lazy(() => import("../views/ui/Grid"));
 const Services = lazy(() => import("../views/ui/Services"));
 const ServiceRequest = lazy(() => import("../views/ui/ServiceRequest"));
+const ApprovedService = lazy(() => import("../views/ui/ApprovedService"));
 const Users = lazy(() => import("../views/ui/Users"));
 const Tables = lazy(() => import("../views/ui/Tables"));
 const Login = lazy(() => import("../views/ui/Login"));
@@ -50,10 +51,31 @@ const ThemeRoutes = [
       {
         path: "/servicerequest",
         exact: true,
-        element: <ServiceRequest></ServiceRequest>,
+        element: (
+          <RequireAuth>
+            <ServiceRequest></ServiceRequest>
+          </RequireAuth>
+        ),
       },
-      { path: "/users", exact: true, element: <Users></Users> },
+      {
+        path: "/users",
+        exact: true,
+        element: (
+          <RequireAuth>
+            <Users></Users>
+          </RequireAuth>
+        ),
+      },
       { path: "/table", exact: true, element: <Tables /> },
+      {
+        path: "/approved",
+        exact: true,
+        element: (
+          <RequireAuth>
+            <ApprovedService></ApprovedService>
+          </RequireAuth>
+        ),
+      },
       {
         path: "/login",
         exact: true,
