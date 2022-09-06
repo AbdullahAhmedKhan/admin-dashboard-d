@@ -7,6 +7,7 @@ import {
   CardTitle,
   Table,
 } from "reactstrap";
+import Swal from "sweetalert2";
 
 const ServiceRequest = () => {
   const status = "pending";
@@ -16,13 +17,33 @@ const ServiceRequest = () => {
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
-  console.log(users);
+  const handleAccept = (id) => {
+    fetch(`http://localhost:5000/servicerequest/${id}`, {
+      method: "PUT",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged === true) {
+          Swal.fire({
+            icon: "success",
+            title: "This request has been approved!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(window.location.reload(false), 5000);
+        }
+      });
+    // toast.success("Successfully Delivered");
+  };
   return (
     <div>
       <Card>
         <CardBody>
-        <div className="text-center">
-            <CardTitle tag="h2" className="text-success">Requested Services</CardTitle>
+          <div className="text-center">
+            <CardTitle tag="h2" className="text-success">
+              Requested Services
+            </CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h5">
               All pending services
             </CardSubtitle>
@@ -73,6 +94,7 @@ const ServiceRequest = () => {
                       color="success"
                       size="sm"
                       className="mx-2 rounded-pill"
+                      onClick={() => handleAccept(user._id)}
                     >
                       Accept
                     </Button>

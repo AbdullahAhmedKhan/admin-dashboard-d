@@ -8,6 +8,7 @@ import bg1 from "../assets/images/bg/bg1.jpg";
 import bg2 from "../assets/images/bg/bg2.jpg";
 import bg3 from "../assets/images/bg/bg3.jpg";
 import bg4 from "../assets/images/bg/bg4.jpg";
+import { useEffect, useState } from "react";
 
 const BlogData = [
   {
@@ -45,6 +46,14 @@ const BlogData = [
 ];
 
 const Starter = () => {
+  const [info, setInfo] = useState({});
+  useEffect(() => {
+    fetch("http://localhost:5000/states")
+      .then((res) => res.json())
+      .then((data) => setInfo(data));
+  }, []);
+  console.log(info);
+  console.log(info[0]?.project);
   return (
     <div>
       {/***Top Cards***/}
@@ -54,7 +63,7 @@ const Starter = () => {
             bg="bg-light-success text-success"
             title="Profit"
             subtitle="Yearly Earning"
-            earning="$21k"
+            earning={info[0]?.earning}
             icon="bi bi-wallet"
           />
         </Col>
@@ -63,7 +72,7 @@ const Starter = () => {
             bg="bg-light-danger text-danger"
             title="Refunds"
             subtitle="Refund given"
-            earning="$1k"
+            earning={info[0]?.refund}
             icon="bi bi-coin"
           />
         </Col>
@@ -72,7 +81,7 @@ const Starter = () => {
             bg="bg-light-warning text-warning"
             title="New Project"
             subtitle="Yearly Project"
-            earning="456"
+            earning={info[0]?.project}
             icon="bi bi-basket3"
           />
         </Col>
@@ -81,7 +90,7 @@ const Starter = () => {
             bg="bg-light-info text-into"
             title="Sales"
             subtitle="Weekly Sales"
-            earning="210"
+            earning={info[0]?.sales}
             icon="bi bi-bag"
           />
         </Col>

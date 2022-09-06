@@ -11,17 +11,19 @@ const ApprovedService = () => {
   const status = "done";
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/servicerequest?status=${status}`)
+    fetch(`http://localhost:5000/approved?status=${status}`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
-  console.log(users);
+
   return (
     <div>
       <Card>
         <CardBody>
           <div className="text-center">
-            <CardTitle tag="h2" className="text-success">Approved Services</CardTitle>
+            <CardTitle tag="h2" className="text-success">
+              Approved Services
+            </CardTitle>
             <CardSubtitle className="mb-2 text-muted" tag="h5">
               All approved services
             </CardSubtitle>
