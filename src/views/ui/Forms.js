@@ -22,6 +22,14 @@ const Forms = () => {
       sales: e.target.sales.value,
     };
     console.log(states);
+    fetch(`https://boiling-caverns-52703.herokuapp.com/states`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(states),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
     e.target.reset();
   };
   return (

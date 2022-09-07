@@ -71,7 +71,15 @@ const ThemeRoutes = [
         element: <Login></Login>,
       },
       { path: "/signup", exact: true, element: <SignUp></SignUp> },
-      { path: "/forms", exact: true, element: <Forms /> },
+      {
+        path: "/forms",
+        exact: true,
+        element: (
+          <RequireAuth>
+            <Forms></Forms>
+          </RequireAuth>
+        ),
+      },
     ],
   },
 ];

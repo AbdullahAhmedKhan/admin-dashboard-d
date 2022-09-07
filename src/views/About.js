@@ -17,9 +17,9 @@ const About = () => {
               <Col lg="8">
                 <h2 className="mt-4">React Admin Dashboard</h2>
                 <h5 className=" mb-4">
-                  5 premium and highly customizable demo variations included in
-                  the package, with React Router 6, Redux Toolkit, Axios nd much
-                  more...
+                  Technology Used: React Js, ReactStrap, Express Js, MongoDB, Bi
+                  Bi icons, Sweet Alert, Netlify, Heroku, Firebase,
+                  react-apexcharts etc.
                 </h5>
                 <img
                   src="https://www.wrappixel.com/wp-content/uploads/edd/2020/04/xtreme-react-admin-template-y.jpg"
