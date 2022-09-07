@@ -11,6 +11,7 @@ import {
   Input,
   FormText,
 } from "reactstrap";
+import Swal from "sweetalert2";
 
 const Forms = () => {
   const handleUpdate = (e) => {
@@ -28,7 +29,16 @@ const Forms = () => {
       body: JSON.stringify(states),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged === true) {
+          Swal.fire({
+            icon: "success",
+            title: "Your states has been updated",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
 
     e.target.reset();
   };
