@@ -9,29 +9,9 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Alert",
-    href: "/alerts",
-    icon: "bi bi-bell",
-  },
-  {
-    title: "Badges",
-    href: "/badges",
-    icon: "bi bi-patch-check",
-  },
-  {
-    title: "Buttons",
-    href: "/buttons",
-    icon: "bi bi-hdd-stack",
-  },
-  {
     title: "Cards",
     href: "/cards",
     icon: "bi bi-card-text",
-  },
-  {
-    title: "Grid",
-    href: "/grid",
-    icon: "bi bi-columns",
   },
   {
     title: "Services",
@@ -54,19 +34,14 @@ const navigation = [
     icon: "bi bi-people",
   },
   {
-    title: "Table",
-    href: "/table",
-    icon: "bi bi-layout-split",
+    title: "Admins",
+    href: "/admins",
+    icon: "bi bi-person-check",
   },
   {
     title: "Forms",
     href: "/forms",
     icon: "bi bi-textarea-resize",
-  },
-  {
-    title: "Breadcrumbs",
-    href: "/breadcrumbs",
-    icon: "bi bi-link",
   },
   {
     title: "About",
@@ -82,7 +57,7 @@ const Sidebar = () => {
   let location = useLocation();
 
   return (
-    <div className="p-3">
+    <div className="p-1">
       <div className="d-flex align-items-center">
         <Logo />
         <Button

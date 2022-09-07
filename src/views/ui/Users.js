@@ -6,7 +6,6 @@ import {
   CardTitle,
   Col,
   Table,
-  Toast,
 } from "reactstrap";
 import Swal from "sweetalert2";
 

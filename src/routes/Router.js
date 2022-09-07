@@ -9,20 +9,15 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 const Starter = lazy(() => import("../views/Starter.js"));
 const About = lazy(() => import("../views/About.js"));
-const Alerts = lazy(() => import("../views/ui/Alerts"));
-const Badges = lazy(() => import("../views/ui/Badges"));
-const Buttons = lazy(() => import("../views/ui/Buttons"));
 const Cards = lazy(() => import("../views/ui/Cards"));
-const Grid = lazy(() => import("../views/ui/Grid"));
 const Services = lazy(() => import("../views/ui/Services"));
 const ServiceRequest = lazy(() => import("../views/ui/ServiceRequest"));
 const ApprovedService = lazy(() => import("../views/ui/ApprovedService"));
 const Users = lazy(() => import("../views/ui/Users"));
-const Tables = lazy(() => import("../views/ui/Tables"));
+const Admins = lazy(() => import("../views/ui/Admin"));
 const Login = lazy(() => import("../views/ui/Login"));
 const SignUp = lazy(() => import("../views/ui/SignUp"));
 const Forms = lazy(() => import("../views/ui/Forms"));
-const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 
 /*****Routes******/
 
@@ -42,11 +37,7 @@ const ThemeRoutes = [
         ),
       },
       { path: "/about", exact: true, element: <About /> },
-      { path: "/alerts", exact: true, element: <Alerts /> },
-      { path: "/badges", exact: true, element: <Badges /> },
-      { path: "/buttons", exact: true, element: <Buttons /> },
       { path: "/cards", exact: true, element: <Cards /> },
-      { path: "/grid", exact: true, element: <Grid /> },
       { path: "/services", exact: true, element: <Services></Services> },
       {
         path: "/servicerequest",
@@ -66,7 +57,15 @@ const ThemeRoutes = [
           </RequireAuth>
         ),
       },
-      { path: "/table", exact: true, element: <Tables /> },
+      {
+        path: "/admins",
+        exact: true,
+        element: (
+          <RequireAuth>
+            <Admins></Admins>
+          </RequireAuth>
+        ),
+      },
       {
         path: "/approved",
         exact: true,
@@ -83,7 +82,6 @@ const ThemeRoutes = [
       },
       { path: "/signup", exact: true, element: <SignUp></SignUp> },
       { path: "/forms", exact: true, element: <Forms /> },
-      { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
     ],
   },
 ];
