@@ -13,12 +13,14 @@ const ServiceRequest = () => {
   const status = "pending";
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/servicerequest?status=${status}`)
+    fetch(
+      `https://boiling-caverns-52703.herokuapp.com/servicerequest?status=${status}`
+    )
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
   const handleAccept = (id) => {
-    fetch(`http://localhost:5000/servicerequest/${id}`, {
+    fetch(`https://boiling-caverns-52703.herokuapp.com/servicerequest/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -34,7 +36,6 @@ const ServiceRequest = () => {
           setTimeout(window.location.reload(false), 5000);
         }
       });
-    // toast.success("Successfully Delivered");
   };
   return (
     <div>

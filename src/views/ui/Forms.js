@@ -13,6 +13,17 @@ import {
 } from "reactstrap";
 
 const Forms = () => {
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const states = {
+      earning: e.target.earning.value,
+      refund: e.target.refund.value,
+      project: e.target.project.value,
+      sales: e.target.sales.value,
+    };
+    console.log(states);
+    e.target.reset();
+  };
   return (
     <Row>
       <Col>
@@ -21,89 +32,46 @@ const Forms = () => {
         {/* --------------------------------------------------------------------------------*/}
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            <i className="bi bi-bell me-2"> </i>
-            Form Example
+            <i className="bi bi-arrow-repeat"> </i>
+            Update Dashboard States
           </CardTitle>
           <CardBody>
-            <Form>
+            <Form onSubmit={handleUpdate}>
               <FormGroup>
-                <Label for="exampleEmail">Email</Label>
+                <Label for="exampleEmail">Yearly Earning</Label>
                 <Input
                   id="exampleEmail"
-                  name="email"
-                  placeholder="with a placeholder"
-                  type="email"
+                  name="earning"
+                  placeholder="Enter yearly earning"
+                  type="number"
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="examplePassword">Password</Label>
+                <Label for="examplePassword">Refund Given</Label>
                 <Input
                   id="examplePassword"
-                  name="password"
-                  placeholder="password placeholder"
-                  type="password"
+                  name="refund"
+                  placeholder="Enter refund"
+                  type="number"
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="exampleSelect">Select</Label>
-                <Input id="exampleSelect" name="select" type="select">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleSelectMulti">Select Multiple</Label>
+                <Label for="examplePassword">Yearly Project</Label>
                 <Input
-                  id="exampleSelectMulti"
-                  multiple
-                  name="selectMulti"
-                  type="select"
-                >
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </Input>
+                  id="examplePassword"
+                  name="project"
+                  placeholder="Enter yearly project"
+                  type="number"
+                />
               </FormGroup>
               <FormGroup>
-                <Label for="exampleText">Text Area</Label>
-                <Input id="exampleText" name="text" type="textarea" />
-              </FormGroup>
-              <FormGroup>
-                <Label for="exampleFile">File</Label>
-                <Input id="exampleFile" name="file" type="file" />
-                <FormText>
-                  This is some placeholder block-level help text for the above
-                  input. It's a bit lighter and easily wraps to a new line.
-                </FormText>
-              </FormGroup>
-              <FormGroup tag="fieldset">
-                <legend>Radio Buttons</legend>
-                <FormGroup check>
-                  <Input name="radio1" type="radio" />{" "}
-                  <Label check>
-                    Option one is this and that—be sure to include why it's
-                    great
-                  </Label>
-                </FormGroup>
-                <FormGroup check>
-                  <Input name="radio1" type="radio" />{" "}
-                  <Label check>
-                    Option two can be something else and selecting it will
-                    deselect option one
-                  </Label>
-                </FormGroup>
-                <FormGroup check disabled>
-                  <Input disabled name="radio1" type="radio" />{" "}
-                  <Label check>Option three is disabled</Label>
-                </FormGroup>
-              </FormGroup>
-              <FormGroup check>
-                <Input type="checkbox" /> <Label check>Check me out</Label>
+                <Label for="examplePassword">Weekly Sales</Label>
+                <Input
+                  id="examplePassword"
+                  name="sales"
+                  placeholder="Enter sales"
+                  type="number"
+                />
               </FormGroup>
               <Button>Submit</Button>
             </Form>

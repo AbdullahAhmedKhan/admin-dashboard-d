@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardTitle,
-  Col,
-  Table,
-} from "reactstrap";
+import { Button, Card, CardBody, CardTitle, Col, Table } from "reactstrap";
 import Swal from "sweetalert2";
 
 const Users = () => {
@@ -22,7 +15,7 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/user/${id}`;
+        const url = `https://boiling-caverns-52703.herokuapp.com/user/${id}`;
         fetch(url, {
           method: "DELETE",
         })
@@ -40,7 +33,7 @@ const Users = () => {
     });
   };
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://boiling-caverns-52703.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);

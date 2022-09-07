@@ -9,7 +9,6 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 const Starter = lazy(() => import("../views/Starter.js"));
 const About = lazy(() => import("../views/About.js"));
-const Cards = lazy(() => import("../views/ui/Cards"));
 const Services = lazy(() => import("../views/ui/Services"));
 const ServiceRequest = lazy(() => import("../views/ui/ServiceRequest"));
 const ApprovedService = lazy(() => import("../views/ui/ApprovedService"));
@@ -30,14 +29,9 @@ const ThemeRoutes = [
       {
         path: "/starter",
         exact: true,
-        element: (
-          <RequireAuth>
-            <Starter />
-          </RequireAuth>
-        ),
+        element: <Starter />,
       },
       { path: "/about", exact: true, element: <About /> },
-      { path: "/cards", exact: true, element: <Cards /> },
       { path: "/services", exact: true, element: <Services></Services> },
       {
         path: "/servicerequest",
@@ -60,11 +54,7 @@ const ThemeRoutes = [
       {
         path: "/admins",
         exact: true,
-        element: (
-          <RequireAuth>
-            <Admins></Admins>
-          </RequireAuth>
-        ),
+        element: <Admins></Admins>,
       },
       {
         path: "/approved",

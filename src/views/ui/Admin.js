@@ -3,7 +3,7 @@ import { Card, CardBody, CardTitle, Col, Table } from "reactstrap";
 const Admin = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/admin")
+    fetch("https://boiling-caverns-52703.herokuapp.com/admin")
       .then((res) => res.json())
       .then((data) => setAdmins(data));
   }, []);
@@ -19,22 +19,36 @@ const Admin = () => {
             Admins Table
           </CardTitle>
           <CardBody className="">
-            <Table bordered hover responsive>
+            <Table borderless hover responsive>
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Full Name</th>
                   <th>Email</th>
                   <th>Position</th>
+                  <th>Social Link</th>
                 </tr>
               </thead>
               <tbody>
                 {admins.map((admin, index) => (
-                  <tr>
-                    <th scope="row">{index + 1}</th>
-                    <td>{admin.name}</td>
-                    <td>{admin.email}</td>
-                    <td>{admin.position}</td>
+                  <tr className="bg-light">
+                    <th scope="row" className="p-3">
+                      {index + 1}
+                    </th>
+                    <td className="p-3">{admin.name}</td>
+                    <td className="p-3">{admin.email}</td>
+                    <td className="p-3">{admin.position}</td>
+                    <td className="p-3">
+                      <a href="https://www.facebook.com/" target="_blank">
+                        <i class="bi bi-facebook p-1"></i>
+                      </a>
+                      <a href="https://www.instagram.com/" target="_blank">
+                        <i class="bi bi-instagram p-1"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/feed/" target="_blank">
+                        <i class="bi bi-linkedin p-1"></i>
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>

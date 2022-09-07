@@ -11,7 +11,9 @@ const ApprovedService = () => {
   const status = "done";
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/approved?status=${status}`)
+    fetch(
+      `https://boiling-caverns-52703.herokuapp.com/approved?status=${status}`
+    )
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);

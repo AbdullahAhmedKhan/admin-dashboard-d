@@ -9,11 +9,6 @@ const navigation = [
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Cards",
-    href: "/cards",
-    icon: "bi bi-card-text",
-  },
-  {
     title: "Services",
     href: "/services",
     icon: "bi bi-shield-plus",
@@ -39,7 +34,7 @@ const navigation = [
     icon: "bi bi-person-check",
   },
   {
-    title: "Forms",
+    title: "Update States",
     href: "/forms",
     icon: "bi bi-textarea-resize",
   },

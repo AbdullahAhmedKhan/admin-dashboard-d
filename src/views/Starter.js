@@ -48,7 +48,7 @@ const BlogData = [
 const Starter = () => {
   const [info, setInfo] = useState({});
   useEffect(() => {
-    fetch("http://localhost:5000/states")
+    fetch("https://boiling-caverns-52703.herokuapp.com/states")
       .then((res) => res.json())
       .then((data) => setInfo(data));
   }, []);
